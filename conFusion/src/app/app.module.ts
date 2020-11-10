@@ -40,6 +40,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { from } from 'rxjs';
 import { LoginComponent } from './login/login.component';
 import { baseURL } from './shared/baseurl';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { baseURL } from './shared/baseurl';
   providers: [DishService,
             LeaderService,
             PromotionService,
+            ProcessHTTPMsgService,
             {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [

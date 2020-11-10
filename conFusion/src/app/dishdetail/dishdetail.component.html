@@ -37,12 +37,7 @@
 
 
     <!-- If dish is NULL -->
-    <div fxFlex [hidden]="dish">
-       <mat-spinner></mat-spinner>
-      <h4>Loading . . . Please Wait</h4>
-    </div>
-
-
+    
    
 
 
@@ -93,5 +88,15 @@
         </form>  
       </div>
     </mat-list>
+    <div fxFlex [hidden]="dish || errMess">
+      <mat-spinner></mat-spinner>
+     <h4>Loading . . . Please Wait</h4>
+   </div>
+   <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+
+
  
 </div> 
