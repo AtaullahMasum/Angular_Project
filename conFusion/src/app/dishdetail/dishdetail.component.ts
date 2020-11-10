@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
 import {MatSliderModule, MatCheckboxModule} from '@angular/material';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+//import { trigger, state, style, animate, transition } from '@angular/animations';
 
 /* Form and Validators imports*/
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,23 +13,22 @@ import { Feedback } from '../shared/feedback';
 /* Observable Params */
 import { switchMap } from 'rxjs/operators';
 
+/*animation*/
+import { visibility, flyInOut, expand } from '../animations/app.animation';
+
 
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
   styleUrls: ['./dishdetail.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
   animations:[
-    trigger('visibility',[
-      state('shown', style({
-        transform: 'scale(1)',
-        opacity: 1
-      })),
-      state('hidden', style({
-        transform: 'scale(0.5)',
-        opacity: 0
-      })),
-      transition('* => *',animate('0.5s ease-in-out'))
-    ])
+    visibility(),
+    flyInOut(),
+    expand()
   ]
 })
 

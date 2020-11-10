@@ -7,7 +7,7 @@
     fxLayoutGap.xs="0">
 
  <!-- If dish is NOT-NULL -->
-<div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
+<div fxFlex="40" *ngIf="dish" [@visibility]="visibility" [@expand]>
     <mat-card>
       <mat-card-header>
         <mat-card-title>
@@ -42,7 +42,7 @@
 
 
  <!-- If dish is NOT-NULL -->
- <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
+ <div fxFlex="40" *ngIf="dish" [@visibility]="visibility" [@expand]>
     <mat-list>
         <h3><strong>Comments</strong></h3>
        <mat-list-item *ngFor='let plato of dish.comments' class="no-wrap">
